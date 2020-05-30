@@ -5,11 +5,11 @@ const path = require('path');
 const app = express();
 
 //serve only the static files from the dist
-app.use(express.static('.dist/AFL'));
+app.use(express.static('./dist/AFL'));
 
-app.get('/*', function(req(res)){
+app.get('/*', function(req,res){
 
-    res.sendFile)path.join(__dirname,'/dist/AFL}/index.html'));
+    res.sendFile(path.join(__dirname,'/dist/AFL}/index.html'));
 
 });
 
