@@ -1,0 +1,29 @@
+<div class="container-fluid bg grey bg-borders" *ngIf="rival">
+<br>
+<br>
+<div>
+    <h2>Your selected rival is {{rival.name}}.</h2>
+    <p><img src="https://squiggle.com.au/{{rival.logo}}"></p>
+
+
+<!--5) Rival games-->
+
+<table>
+<tr>
+    <th>Home Team</th>
+    <th>Away Team</th>
+</tr>
+
+<tr *ngFor="let rivalGame of rivalGames">
+    <td>{{rivalGame.hteam}}</td>
+    <td>{{rivalGame.ateam}}</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+
+
+
+

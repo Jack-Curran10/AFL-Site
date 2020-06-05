@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    
+    <h1>Results Ladder</h1>
+    <table>
+        <tr>    
+            <th>Rank</th>
+            <th>Club</th>
+            <th>Games Played</th>
+            <th>Points</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Draws</th>
+        </tr>
+        <tr *ngFor="let standing of standings">
+            <td class="rank-space">{{standing.rank}}</td>
+            <td>{{standing.name}}</td>
+            <td>{{standing.played}}</td>
+            <td>{{standing.pts}}</td>
+            <td>{{standing.wins}}</td>
+            <td>{{standing.losses}}</td>
+            <td>{{standing.draws}}</td>
+        </tr>
+    </table>
+</div>

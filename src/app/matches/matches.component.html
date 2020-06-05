@@ -1,0 +1,25 @@
+<div class="container-fluid bg-grey"> 
+  <!-- Custom story 3) All upcoming round 20 matches -->
+  <h1>Matches</h1>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th style="width:10%;">Line-Up</th>
+      <th></th>
+      <th></th>
+      <th>Location</th>
+    </tr> 
+
+    <tr *ngFor="let game of games" >
+      <td class="date-container1">{{game.date}}</td>
+      <td>Logo 1</td>
+      <td >{{game.hteam}} </td>
+      <td><b>VS</b></td>
+      <td >{{game.ateam}}</td>
+      <td>Logo2</td>
+      <td class="date-container2">{{game.venue}}</td>
+    </tr>
+  </table>
+</div>

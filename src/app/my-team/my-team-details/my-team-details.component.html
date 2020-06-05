@@ -1,0 +1,100 @@
+<style>
+    ul {
+        display:inline;
+    }
+</style>
+
+<div  class="container bg-grey bg-borders" id="TeamSeason">
+    <div *ngIf="team">
+        <br> <br>
+        <h2>Your selected team is {{team.name}}. </h2>
+        <p><img src="https://squiggle.com.au/{{team.logo}}"></p>
+        <h2 style="font-size: 20px;">{{team.name}} results from rounds 1 to 19:</h2>
+        <table>
+            <tr>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Score</th>
+                <th>Winner</th>
+            </tr>
+            <tr *ngFor="let seasonGame of seasonGames">
+            
+                <td>{{seasonGame.hteam}}</td>
+                <td>{{seasonGame.ateam}}</td>
+                <td>{{seasonGame.hscore}}-{{seasonGame.ascore}}</td>
+                <td>{{seasonGame.winner}}</td>
+            </tr>  
+        </table>
+
+        <!-- 3) Game details for next 5 matches -->
+        <br> <br>
+        <h3 style="font-size: 20px;">Next 5 games for {{team.name}}:</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Round</th>
+                <th>Venue</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+            </tr>
+             <tr *ngFor="let nextGame of nextGames">
+                <td>{{nextGame.date}}</td>
+                <td>{{nextGame.round}}</td>
+                <td>{{nextGame.venue}}</td>
+                <td>{{nextGame.hteam}}</td>
+                <td>{{nextGame.ateam}}</td> 
+            </tr>
+            <p style="font-size: 15px;"><b><i>*Round 24 to be determined based on standings after Round 23.</i></b></p>
+        </table>
+
+        <!-- 1) Prediction team will win-->
+        <h4 style="font-size: 20px;">Prediction {{team.name}} will win their next game:</h4>
+        <table>
+            <tr>
+                <th>Teams</th>
+                <th>Round</th>
+                <th>Prediction Percentage</th>
+            </tr>
+            <tr *ngFor="let tip of tips">
+                <td>{{tip.hteam}} vs. {{tip.ateam}}</td>
+                <td>{{tip.round}}</td>
+                <td>{{tip.confidence}}%</td>
+            </tr>
+        </table>
+
+        <!-- 4) Venues team has won so far -->
+        <h3 style="font-size: 20px;">{{team.name}} has won at the following venues so far this season:</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Teams</th>
+                <th>Venue</th>
+            </tr>
+            <tr *ngFor="let venueWin of venueWins">
+                <td>{{venueWin.date}}</td>
+                <td>{{venueWin.hteam}} vs. {{venueWin.ateam}}</td>
+                <td>{{venueWin.venue}}</td>
+            </tr>
+        </table>
+
+        <!-- Custom story 1) Losses so far this season -->
+        <h5 style="font-size: 20px;">{{team.name}} has lost the following games this season:</h5>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Teams</th>
+                <th>Venue</th>
+            </tr>
+            <tr *ngFor="let game of games">
+                <td>{{game.date}}</td>
+                <td>{{game.hteam}} vs. {{game.ateam}}</td>
+                <td>{{game.venue}}</td>
+            </tr>
+        </table>
+
+
+
+
+    </div>
+
+</div>

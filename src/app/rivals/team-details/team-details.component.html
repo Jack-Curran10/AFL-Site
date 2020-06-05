@@ -1,0 +1,27 @@
+<style>
+    ul {
+        display:inline;
+    }
+</style>
+<div *ngIf="team">
+
+<p>Your selected team is {{team.name}}.</p>
+<p><img src="https://squiggle.com.au/{{team.logo}}"></p>
+<br>
+<h1 style="font-size: 23px;"> Choose your rival!</h1>
+
+<ul *ngFor="let teamChoice of teamChoices" (click)="onChoice(teamChoice)">
+<span> <img src="https://squiggle.com.au/{{teamChoice.logo}}" width="30" height="30"> {{teamChoice.name}}</span>
+</ul>
+
+<app-rival-details [rival]="chosenTeam"></app-rival-details> 
+
+
+
+<!--5) Rival games-->
+
+</div>
+
+
+
+

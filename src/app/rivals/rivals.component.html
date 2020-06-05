@@ -1,0 +1,17 @@
+<style>
+    ul {
+        display:inline;
+    }
+</style>
+<div class="container-fluid bg-grey">
+    <h2>Rivals</h2>
+<h1>Choose your favourite team!</h1>
+    <div class="grid-container bg-borders">
+
+        <ul *ngFor="let team of teams" (click)="onSelect(team)">
+            <span> <img src="https://squiggle.com.au/{{team.logo}}" width="30" height="30"> {{team.name}}</span>
+        </ul>
+    </div>
+
+<app-team-details [team]="selectedTeam"></app-team-details>
+</div>

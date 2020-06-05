@@ -1,0 +1,24 @@
+<style>
+    ul {
+        display:inline;
+    }
+</style>
+<div id="My_Team" class="container-fluid bg-grey">
+    <h2><u>MY Team</u></h2><br>
+    <h1>Choose your favourite team!</h1>
+    
+        <div class="grid-container ">
+            <ul *ngFor="let team of teams" (click)="onSelect(team)">
+                <span> <img src="https://squiggle.com.au/{{team.logo}}" width="30" height="30"> {{team.name}}</span>
+            </ul>
+        </div>
+        
+
+        <app-my-team-details [team]="selectedTeam"></app-my-team-details>
+    
+</div>
+
+
+
+
+
